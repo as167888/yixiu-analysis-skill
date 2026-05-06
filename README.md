@@ -21,13 +21,13 @@
 ```bash
 mkdir -p ~/.claude/skills/yixiu-analysis
 curl -o ~/.claude/skills/yixiu-analysis/SKILL.md \
-  https://raw.githubusercontent.com/YOUR_USERNAME/yixiu-analysis-skill/main/SKILL.md
+  https://raw.githubusercontent.com/as167888/yixiu-analysis-skill/main/SKILL.md
 ```
 
 **Windows（PowerShell）：**
 ```powershell
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills\yixiu-analysis"
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/YOUR_USERNAME/yixiu-analysis-skill/main/SKILL.md" `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/as167888/yixiu-analysis-skill/main/SKILL.md" `
   -OutFile "$env:USERPROFILE\.claude\skills\yixiu-analysis\SKILL.md"
 ```
 
