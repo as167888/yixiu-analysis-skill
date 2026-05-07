@@ -1,7 +1,11 @@
-# 忽略原始数据文件（不应提交到仓库）
-*.json
-*.csv
-
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# 用户本地配置（不提交）
+.claude/settings.local.json
+.claude/settings.json
+
+# Python 缓存
+__pycache__/
+*.pyc
