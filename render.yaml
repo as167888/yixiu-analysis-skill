@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: xiulao-shuo
+    env: docker
+    rootDir: web_app
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: PORT
+        value: "8000"
