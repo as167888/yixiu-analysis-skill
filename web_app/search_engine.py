@@ -182,15 +182,15 @@ def search_multiple(queries: list[str], top_n_per_query: int = 5) -> list[dict]:
 
 
 def format_results_for_prompt(results: list[dict]) -> str:
-    """将搜索结果格式化为可注入 system prompt 的文本"""
+    """将搜索结果格式化为可注入 system prompt 的文本（自然融入，不做编号引用）"""
     if not results:
         return "（知识库中未找到相关内容）"
 
     lines = []
     for i, r in enumerate(results, 1):
-        source_label = r["source"]
         date_str = r["created_at"][:10] if r["created_at"] else "未知日期"
-        lines.append(f"[{i}] ({source_label} · {date_str})")
-        lines.append(f"    {r['snippet']}")
+        snippet_clean = r["snippet"].replace("$心动公司(02400)$", "心动公司").replace("$", "")
+        lines.append(f"--- 参考观点 {i} ({date_str}) ---")
+        lines.append(snippet_clean)
         lines.append("")
     return "\n".join(lines)
